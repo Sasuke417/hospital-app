@@ -90,12 +90,109 @@ class SignUpForm extends Component {
           </div>
 
           <form onSubmit={this.handleSubmit} className="FormFields">
-        
-            
-            {/*Write code here to create uname, email, dob, location, mobileno labels and inputs */}
-            
             <div className="FormField">
-              {/* Write code here to create Register Button */}
+              <label className="FormField__Label" htmlFor="uname">
+                Username
+              </label>
+              <input
+                type="text"
+                id="uname"
+                className="FormField__Input"
+                placeholder="Enter your username"
+                name="uname"
+                value={this.state.uname}
+                onChange={this.handleChange}
+              />
+            </div>
+
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="email">
+                Email Address
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="FormField__Input"
+                placeholder="Enter your email"
+                name="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+              />
+            </div>
+
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="password">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                className="FormField__Input"
+                placeholder="Enter your password"
+                name="password"
+                value={this.state.password}
+                onChange={this.handleChange}
+              />
+            </div>
+
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="dob">
+                Date of Birth
+              </label>
+              {/* <DatePicker
+                id="dob"
+                className="FormField__Input"
+                selected={this.state.dob}
+                onChange={(date) => this.setState({ dob: date })}
+              /> */}
+              <input
+              type="date"
+              id="dob"
+              className="FormField__Input"
+              placeholder="Enter your DOB"
+              name="dob"
+              value={this.state.dob}
+              onChange={this.handleChange}
+            />
+            </div>
+
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="mobileno">
+                Mobile Number
+              </label>
+              <input
+                type="tel"
+                id="mobileno"
+                className="FormField__Input"
+                placeholder="Enter your mobile number"
+                name="mobileno"
+                value={this.state.mobileno}
+                onChange={this.handleChange}
+              />
+            </div>
+
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="location">
+                Location
+              </label>
+              <input
+                type="text"
+                id="location"
+                className="FormField__Input"
+                placeholder="Enter your location"
+                name="location"
+                value={this.state.location}
+                onChange={this.handleChange}
+              />
+            </div>
+
+            <div className="FormField">
+              <button
+                className="FormField__Button mr-20"
+                disabled={!this.canBeSubmitted()}
+              >
+                Register
+              </button>
             </div>
           </form>
         </div>

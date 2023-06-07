@@ -34,9 +34,48 @@ class ViewProfile extends Component {
 
         <div className="FormCenter">
           <form onSubmit={this.handleSubmit} className="FormFields">
-            {/*Write code to create labels for name,email,dob,mobileno and location */}
             <div className="FormField">
-              {/*Write code here to create a close button */}
+              <label htmlFor="name" className="FormField__Label">
+                Name
+              </label>
+              <span id="name">{admin.name}</span>
+            </div>
+
+            <div className="FormField">
+              <label htmlFor="email" className="FormField__Label">
+                Email
+              </label>
+              <span id="email">{admin.email}</span>
+            </div>
+
+            <div className="FormField">
+              <label htmlFor="dob" className="FormField__Label">
+                Date of Birth
+              </label>
+              <span id="dob">{admin.dob}</span>
+            </div>
+
+            <div className="FormField">
+              <label htmlFor="mobileno" className="FormField__Label">
+                Mobile Number
+              </label>
+              <span id="mobileno">{admin.mobile}</span>
+            </div>
+
+            <div className="FormField">
+              <label htmlFor="location" className="FormField__Label">
+                Location
+              </label>
+              <span id="location">{admin.location}</span>
+            </div>
+
+            <div className="FormField">
+              <button
+                className="FormField__Button mr-20"
+                onClick={this.handleClose}
+              >
+                Close
+              </button>
             </div>
           </form>
         </div>

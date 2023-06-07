@@ -35,7 +35,7 @@ class AllPatients extends Component {
       <div style={{ height: "100%" }}>
           <NavBar />
         <form style={{ display: "flex", height: "100%", alignItems: "center" }}>
-          {patientsList.length === 0 ? (
+          {patientsList && patientsList.length === 0 ? (
             <h1 style={{ textAlign: "center", flexGrow: "1" }}>
               No Patients Found
             </h1>

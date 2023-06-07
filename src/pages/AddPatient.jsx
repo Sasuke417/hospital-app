@@ -79,7 +79,65 @@ class AddPatient extends Component {
             Adding a Patient
           </p>
         </div>
-        {/* Write code here to create fields and input labels for name,email,dob,mobileno and location  */}
+        <div><div></div></div>
+        <form onSubmit={this.handleSubmit}>
+          <div>
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={this.state.name}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="dob">Date of Birth:</label>
+            <input
+              type="text"
+              id="dob"
+              name="dob"
+              value={this.state.dob}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="location">Location:</label>
+            <input
+              type="text"
+              id="location"
+              name="location"
+              value={this.state.location}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="mobile">Mobile:</label>
+            <input
+              type="text"
+              id="mobile"
+              name="mobile"
+              value={this.state.mobile}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <button type="submit" disabled={!isEnabled}>
+              Add Patient
+            </button>
+            <button onClick={this.handleCancel}>Cancel</button>
+          </div>
+        </form>
       </div>
     );
   }

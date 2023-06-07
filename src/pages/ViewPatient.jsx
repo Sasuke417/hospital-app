@@ -36,14 +36,46 @@ class ViewPatient extends Component {
           </p>
         </div>
         <div className="FormCenter">
-          
-            <form onSubmit={this.handleSubmit} className="FormFields">
-              {/* Write code here to create fields for name, disease,appdate, slot and mobile*/}
-              <div className="FormField">
-                {/*Write code here to create close button */}
-              </div>
-            </form>
-          
+          <form className="FormFields">
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="name" id="name">
+                Name
+              </label>
+              <span>{patient.name}</span>
+            </div>
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="email" id="email">
+                Email
+              </label>
+              <span>{patient.email}</span>
+            </div>
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="dob" id="dob">
+                Date of Birth
+              </label>
+              <span>{patient.dob}</span>
+            </div>
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="location" id="location">
+                Location
+              </label>
+              <span>{patient.location}</span>
+            </div>
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="mobile" id="mobile">
+                Mobile
+              </label>
+              <span>{patient.mobile}</span>
+            </div>
+            <div className="FormField">
+              <button
+                className="FormField__Button mr-20"
+                onClick={this.handleClose}
+              >
+                Close
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     );

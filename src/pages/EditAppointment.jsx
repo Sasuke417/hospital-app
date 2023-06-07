@@ -85,15 +85,71 @@ class EditAppointment extends Component {
               textAlign: "center",
               paddingBottom: "10px",
               paddingTop: "30px",
-              fontSize: "2em"
+              fontSize: "2em",
             }}
           >
             Edit Appointment
           </p>
         </div>
+        <div></div>
         <div className="FormCenter">
           <form onSubmit={this.handleSubmit} className="FormFields">
-            {/*it should have fields like name, disease, appdate, slot, description, submit and cancel buttons */}
+            <div>
+              <label htmlFor="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={this.state.name}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="disease">Disease:</label>
+              <input
+                type="text"
+                id="disease"
+                name="disease"
+                value={this.state.disease}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="appdate">Appointment Date:</label>
+              <input
+                type="text"
+                id="appdate"
+                name="appdate"
+                value={this.state.appdate}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="slot">Slot:</label>
+              <input
+                type="text"
+                id="slot"
+                name="slot"
+                value={this.state.slot}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="description">Description:</label>
+              <input
+                type="text"
+                id="description"
+                name="description"
+                value={this.state.description}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div>
+              <button type="submit" disabled={!this.canBeSubmitted()}>
+                Save Changes
+              </button>
+              <button onClick={this.handleCancel}>Cancel</button>
+            </div>
           </form>
         </div>
       </div>

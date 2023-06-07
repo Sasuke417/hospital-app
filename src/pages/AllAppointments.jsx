@@ -40,9 +40,9 @@ class AllAppointments extends Component {
         <NavBar />
 
         <form style={{ display: "flex", height: "100%", alignItems: "center" }}>
-          {appointmentsList.length === 0 ? (
+          {appointmentsList && appointmentsList.length === 0 ? (
             <h1 style={{ textAlign: "center", flexGrow: "1" }}>
-              No Appoinments Found
+              No Appointments Found
             </h1>
           ) : (
             <div style={{ height: "100%", width: "100%" }}>
@@ -53,13 +53,13 @@ class AllAppointments extends Component {
                     paddingBottom: "10px",
                     paddingTop: "10px",
                     fontSize: "2em",
-                    color: "Slate Blue"
+                    color: "Slate Blue",
                   }}
                 >
                   List of All Appointments
                 </p>
               </div>
-              {appointmentsList.map((appointment,index) => (
+              {appointmentsList && appointmentsList.map((appointment,index) => (
               {/*Write code here to list the appointments along with the buttons*/}
               ))}
             </div>

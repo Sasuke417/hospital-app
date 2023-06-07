@@ -31,7 +31,7 @@ class ViewAppointment extends Component {
                 textAlign: "center",
                 paddingBottom: "10px",
                 paddingTop: "30px",
-                fontSize: "2em"
+                fontSize: "2em",
               }}
             >
               Viewing Appointment
@@ -39,10 +39,44 @@ class ViewAppointment extends Component {
           </div>
         </div>
         <div className="FormCenter">
-        <form onSubmit={this.handleSubmit} className="FormFields">
-            {/* Write code here to display name, appdate, slot, description and disease */}
+          <form onSubmit={this.handleSubmit} className="FormFields">
             <div className="FormField">
-              {/*Write code here to create a close button */}
+              <label htmlFor="name" className="FormField__Label">
+                Name
+              </label>
+              <span id="name">{appointment.name}</span>
+            </div>
+            <div className="FormField">
+              <label htmlFor="appdate" className="FormField__Label">
+                Appointment Date
+              </label>
+              <span id="appdate">{appointment.appdate}</span>
+            </div>
+            <div className="FormField">
+              <label htmlFor="slot" className="FormField__Label">
+                Slot
+              </label>
+              <span id="slot">{appointment.slot}</span>
+            </div>
+            <div className="FormField">
+              <label htmlFor="description" className="FormField__Label">
+                Description
+              </label>
+              <span id="description">{appointment.description}</span>
+            </div>
+            <div className="FormField">
+              <label htmlFor="disease" className="FormField__Label">
+                Disease
+              </label>
+              <span id="disease">{appointment.disease}</span>
+            </div>
+            <div className="FormField">
+              <button
+                className="FormField__Button mr-20"
+                onClick={this.handleClose}
+              >
+                Close
+              </button>
             </div>
           </form>
         </div>

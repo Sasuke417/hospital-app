@@ -23,7 +23,50 @@ const Example = props => {
 
   return (
     <div>
-      {/*should have a Navbar brand, toggler and the NavItem (logout) should be linked to sign-in page */}
+      <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">
+          <img src={Medilogo} alt="Medi-Logo" />
+        </NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <NavLink tag={ReactLink} to="/addPatient">
+                Add Patient
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={ReactLink} to="/allPatients">
+                All Patients
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={ReactLink} to="/bookAppointment">
+                Book Appointment
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={ReactLink} to="/allAppointments">
+                All Appointments
+              </NavLink>
+            </NavItem>
+            {/* <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                User
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem tag={ReactLink} to="/viewProfile">
+                  View Profile
+                </DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem tag={ReactLink} to="/logout">
+                  Logout
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown> */}
+          </Nav>
+        </Collapse>
+      </Navbar>
     </div>
   );
 };

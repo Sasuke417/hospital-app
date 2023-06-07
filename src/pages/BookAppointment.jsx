@@ -97,30 +97,103 @@ class BookAppointment extends Component {
           >
             Booking Appointment
           </p>
-        </div>
+        </div><div></div>
         <div className="FormCenter">
           <form onSubmit={this.handleSubmit} className="FormFields">
             <div className="FormField">
-              {/*Write code here to create dropdown to list the name of patients, if no patients are avilable then it should be N/A */}
-            </div>
-            {/*Write code here to create date and disease labels */}
-            <div className="FormField">
               <label className="FormField__Label" htmlFor="name">
+                Name
+              </label>
+              <select
+                id="dropdown"
+                className="FormField__Input"
+                onChange={this.handleDropdownNameChange}
+              >
+                <option value="N/A">N/A</option>
+                {names.map((name, index) => (
+                  <option value={name} key={index}>
+                    {name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="disease">
+                Disease
+              </label>
+              <input
+                type="text"
+                id="disease"
+                className="FormField__Input"
+                placeholder="Enter the disease"
+                name="disease"
+                value={this.state.disease}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="appdate">
+                Appointment Date
+              </label>
+              <input
+                type="date"
+                id="appdate"
+                className="FormField__Input"
+                placeholder="Enter the appointment date"
+                name="appdate"
+                value={this.state.appdate}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="slot">
                 Slots
               </label>
-              <select id="dropdown" class = "DropDowns" ref = {(input)=> this.slots = input}>
-                <header>select slots </header>
+              <input
+                type="date"
+                
+                className="FormField__Input"
+                placeholder="Enter the slot"
+                name="slot"
+                value={this.state.slot}
+                onChange={this.handleChange}
+              />
+              <select
+                
+                className="FormField__Input"
+                onChange={this.handleDropdownChange}
+              >
                 <option value="N/A">N/A</option>
                 <option value="10-11 AM">10-11 AM</option>
                 <option value="1-2 PM">1-2 PM</option>
                 <option value="3-4 PM">3-4 PM</option>
                 <option value="6-8 PM">6-8 PM</option>
               </select>
-    
             </div>
-           {/* Write code here to create description field,submit and cancel buttons */}
-            
-              
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="description">
+                Description
+              </label>
+              <textarea
+                id="description"
+                className="FormField__Input"
+                placeholder="Enter a description"
+                name="description"
+                value={this.state.description}
+                onChange={this.handleChange}
+              ></textarea>
+            </div>
+            <div className="FormField">
+              <button className="FormField__Button mr-20" disabled={!isEnabled}>
+                Submit
+              </button>
+              <button
+                className="FormField__Button mr-20"
+                onClick={this.handleCancel}
+              >
+                Cancel
+              </button>
+            </div>
           </form>
         </div>
       </div>
